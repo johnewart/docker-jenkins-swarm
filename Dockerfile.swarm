@@ -1,0 +1,10 @@
+FROM alpine:3.2
+RUN apk --update add openjdk7-jre 
+
+
+COPY swarm/swarm-client-2.0-jar-with-dependencies.jar /swarm-client.jar
+COPY swarm/swarm-client.sh /swarm-client.sh
+RUN chmod +x /swarm-client.sh
+
+CMD ["/swarm-client.sh"]
+
